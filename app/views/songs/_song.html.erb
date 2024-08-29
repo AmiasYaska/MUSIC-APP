@@ -1,0 +1,22 @@
+<div id="<%= dom_id song %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= song.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= song.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Image:</strong>
+    <%= link_to song.image.filename, song.image if song.image.attached? %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Audio:</strong>
+    <%= link_to song.audio.filename, song.audio if song.audio.attached? %>
+  </p>
+
+</div>

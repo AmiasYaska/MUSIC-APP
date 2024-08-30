@@ -13,4 +13,13 @@ export default class extends Controller {
       url: this.urlValue,
     })
   }
+
+  togglePlaying(e) {
+    e.preventDefault();
+    this.wavesurfer.playPause();
+    let link = e.target.closest("a");
+    Array.from(link.children).forEach((child) =>
+      child.classList.toggle("hidden")
+    );
+  }
 }

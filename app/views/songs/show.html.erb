@@ -1,7 +1,7 @@
 <div class="md:w-2/3 w-full flex flex-col px-16 py-8 flex flex-col items-center">
   <%= image_tag(@song.image, class: "w-80 h-80 object-cover mb-8") if @song.image.attached? %>
 
-  <div data-controller="audio-player", data-audio-player-url-value="<%= url_for(@song.audio) %>", class="w-80 max-w-3xl"></div>
+  <div data-controller="audio-player", data-audio-player-url-value="<%= url_for(@song.audio) %>", class="w-full h-40 "></div>
 
   <div class="text-lg font-bold">
     <%= @song.title %>

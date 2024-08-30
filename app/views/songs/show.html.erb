@@ -4,6 +4,8 @@
       <%= image_tag @song.image if @song.image.attached? %>
     </div>
 
+    <div data-controller="audio-player", data-audio-player-url-value="<%= url_for(@song.audio) %>", class="w-40"></div>
+
     <div class="text-lg font-bold">
       <%= @song.title %>
     </div>

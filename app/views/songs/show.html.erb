@@ -1,26 +1,22 @@
-<div class="md:w-2/3 w-full flex flex-col px-16 py-8">
-  <div class="flex flex-col items-center ">
-    <div class="w-40 h-40">
-      <%= image_tag @song.image if @song.image.attached? %>
-    </div>
+<div class="md:w-2/3 w-full flex flex-col px-16 py-8 flex flex-col items-center">
+  <%= image_tag(@song.image, class: "w-80 h-80 object-cover mb-8") if @song.image.attached? %>
 
-    <div data-controller="audio-player", data-audio-player-url-value="<%= url_for(@song.audio) %>", class="w-40"></div>
+  <div data-controller="audio-player", data-audio-player-url-value="<%= url_for(@song.audio) %>", class="w-80 max-w-3xl"></div>
 
-    <div class="text-lg font-bold">
-      <%= @song.title %>
-    </div>
-    <p class="font-light">by <%= @song.user.username %></p>
-
-    <div class="text-lg">
-      <%= @song.description %>
-    </div>
-
-    <% if current_user == @song.user %>
-      <%= link_to "Edit this song", edit_song_path(@song), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <div class="inline-block ml-2">
-        <%= button_to "Destroy this song", @song, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-      </div>
-    <% end %>
-
+  <div class="text-lg font-bold">
+    <%= @song.title %>
   </div>
+  <p class="font-light">by <%= @song.user.username %></p>
+
+  <div class="text-lg">
+    <%= @song.description %>
+  </div>
+
+  <% if current_user == @song.user %>
+    <%= link_to "Edit this song", edit_song_path(@song), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to "Destroy this song", @song, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+  <% end %>
+
 </div>

@@ -1,8 +1,10 @@
 <div class="w-full flex flex-col py-8 px-8">
 
-  <% @songs.each do |song| %>
-    <%= link_to song.title, song_path(song)  %>
-  <% end %>
+  <div class="flex flex-col gap-4 text-lg">
+    <% @songs.each do |song| %>
+      <%= link_to song.title, song_path(song)  %>
+    <% end %>
+  </div>
   
   <div class="flex justify-between items-center mt-8">
     <%= link_to "New song", new_song_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
